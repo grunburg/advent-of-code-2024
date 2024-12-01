@@ -7,13 +7,19 @@ describe("day 1 solution", () => {
 
   before(async () => {
     input = await Deno.readTextFile(
-      `./src/solutions/day-1/input.txt`,
+      `./src/solutions/day-1/test-input.txt`,
     );
   });
 
   test("part 1", () => {
     const result = new Solution().part1(input);
 
-    expect(result).toBe("A");
+    expect(result).toEqual("11");
+  });
+
+  test("part 2", () => {
+    const result = new Solution().part2(input);
+
+    expect(result).toEqual("31");
   });
 });
