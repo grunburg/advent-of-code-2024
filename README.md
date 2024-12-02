@@ -19,5 +19,12 @@ deno run aoc --day 1
 
 4. Tests
 ```bash
-deno test --allow-read ./src/solutions/day-<num>/solution.test.ts
+deno test --allow-read ./src/solutions/day-<day:int>/solution.test.ts
+```
+
+---
+
+To generate a new daily template, run:
+```bash
+deno run aoc --template --day <day:int>
 ```
