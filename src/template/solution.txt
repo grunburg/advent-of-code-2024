@@ -1,0 +1,11 @@
+import AbstractSolution from "../abstract-solution.ts";
+
+export default class Solution extends AbstractSolution {
+  public part1(input: string): string {
+    return "";
+  }
+
+  public part2(input: string): string {
+    return "";
+  }
+}

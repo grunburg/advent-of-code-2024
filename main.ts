@@ -1,13 +1,22 @@
 import { parseArgs } from "jsr:@std/cli/parse-args";
 import AbstractSolution from "./src/solutions/abstract-solution.ts";
+import generate from "./src/template-gen.ts";
 
 const args = parseArgs(Deno.args, {
   string: ["day"],
-  default: { day: 1 },
+  boolean: ["template"],
+  default: { day: "1", template: true },
 });
 
 // Learn more at https://docs.deno.com/runtime/manual/examples/module_metadata#concepts
 if (import.meta.main) {
+  if (args.template) {
+    await generate(args.day);
+
+    console.log(`A template was generated for the Day ${args.day}.`);
+    Deno.exit();
+  }
+
   const input = await Deno.readTextFile(
     `./src/solutions/day-${args.day}/input.txt`,
   );
