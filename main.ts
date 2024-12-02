@@ -5,7 +5,7 @@ import generate from "./src/template-gen.ts";
 const args = parseArgs(Deno.args, {
   string: ["day"],
   boolean: ["template"],
-  default: { day: "1", template: true },
+  default: { day: "1", template: false },
 });
 
 // Learn more at https://docs.deno.com/runtime/manual/examples/module_metadata#concepts
